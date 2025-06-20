@@ -592,145 +592,16 @@ footer {
     justify-content: center;
 }
 
-.competency-card:hover .competency-icon {
-    transform: scale(1.1);
-}
-
-.competency-icon svg {
-    width: 24px;
-    height: 24px;
-}
-
-.contact-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.contact-icon svg {
-    width: 28px;
-    height: 28px;
-    stroke: #fff;
-}
-
-.contact-item:hover .contact-icon {
-    background: #FFD700;
-    transform: scale(1.05);
-}
-
-.contact-item:hover .contact-icon svg {
-    stroke: #000;
-}
-
-@media (max-width: 768px) {
-    .banner-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .cv-btn {
-        font-size: 1rem;
-        padding: 0.8rem 2rem;
-    }
-}
-
-.arrow-down-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-}
-
-.arrow-down {
-    display: block;
-    width: 32px;
-    height: 32px;
-    border-left: 4px solid #fff;
-    border-bottom: 4px solid #fff;
-    transform: rotate(-45deg);
-    margin: 0 auto;
-    animation: arrow-bounce 1.2s infinite;
-}
-
-@keyframes arrow-bounce {
-    0%, 100% {
-        transform: translateY(0) rotate(-45deg);
-    }
-    50% {
-        transform: translateY(16px) rotate(-45deg);
-    }
-}
-
-@media (max-width: 768px) {
-    .arrow-down {
-        width: 24px;
-        height: 24px;
-        border-width: 3px;
-    }
-    .arrow-down-wrapper {
-        margin-top: 2.5rem;
-    }
-}
-
-/* Kompetencer sektion */
-.competencies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.competency-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    border: 1px solid #eee;
-    position: relative;
-    overflow: visible;
-    cursor: pointer;
-    height: auto;
-    min-height: 200px;
-}
-
-.competency-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.03), transparent);
-    background-size: 200% 200%;
-    animation: shimmer 3s infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 200% 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
-}
-
-.competency-card:hover {
+.competency-card:hover,
+.competency-card:focus {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
     border-color: #FFD700;
     z-index: 1;
 }
 
-.competency-card:hover::before {
+.competency-card:hover::before,
+.competency-card:focus::before {
     animation: shimmer 1.5s infinite;
     background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.08), transparent);
 }
@@ -741,6 +612,7 @@ footer {
     color: #111827;
     font-weight: 600;
     line-height: 1.4;
+    transition: all 0.3s ease;
 }
 
 .competency-card .short-description {
@@ -764,7 +636,8 @@ footer {
     font-weight: 500;
 }
 
-.competency-card:hover .expanded-description {
+.competency-card:hover .expanded-description,
+.competency-card:focus .expanded-description {
     opacity: 1;
     visibility: visible;
     height: auto;
@@ -773,7 +646,8 @@ footer {
     border-top: 1px solid #eee;
 }
 
-.competency-card:hover .short-description {
+.competency-card:hover .short-description,
+.competency-card:focus .short-description {
     opacity: 0.7;
 }
 
