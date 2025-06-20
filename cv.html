@@ -9,11 +9,16 @@
 <body>
     <header>
         <nav>
-            <ul>
+            <button class="nav-toggle" aria-label="Åbn navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav__list">
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="index.html">Om Mig</a></li>
                 <li><a href="index.html#kompetencer">Kompetencer</a></li>
                 <li><a href="index.html#kontakt">Kontakt</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="referencer.html">Referencer</a></li>
             </ul>
         </nav>
     </header>
@@ -157,5 +162,26 @@
 
     <footer>
     </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.querySelector('.nav__list');
+
+        navToggle.addEventListener('click', () => {
+            navList.classList.toggle('nav__list--visible');
+            navToggle.classList.toggle('is-active');
+            document.body.style.overflow = navList.classList.contains('nav__list--visible') ? 'hidden' : 'auto';
+        });
+
+        document.querySelectorAll('.nav__list a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('nav__list--visible')) {
+                    navList.classList.remove('nav__list--visible');
+                    navToggle.classList.remove('is-active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
