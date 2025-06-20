@@ -596,6 +596,11 @@ footer {
     transform: scale(1.1);
 }
 
+.competency-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
 .contact-icon {
     width: 48px;
     height: 48px;
@@ -606,6 +611,12 @@ footer {
     border-radius: 12px;
     transition: all 0.3s ease;
     flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
 }
 
 .contact-item:hover .contact-icon {
