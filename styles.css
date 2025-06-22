@@ -1309,7 +1309,8 @@ main {
     }
 }
 
-.reference-card:hover {
+.reference-card:hover,
+.reference-card:focus {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
@@ -1318,6 +1319,8 @@ main {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .reference-content .short-description {
@@ -1341,7 +1344,8 @@ main {
     font-weight: 500;
 }
 
-.reference-card:hover .expanded-description {
+.reference-card:hover .expanded-description,
+.reference-card:focus .expanded-description {
     opacity: 1;
     visibility: visible;
     height: auto;
@@ -1350,7 +1354,8 @@ main {
     border-top: 1px solid #eee;
 }
 
-.reference-card:hover .short-description {
+.reference-card:hover .short-description,
+.reference-card:focus .short-description {
     opacity: 0.7;
 }
 
@@ -1358,7 +1363,7 @@ main {
     color: #000;
     text-decoration: none;
     border-bottom: 1px solid #000;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     display: inline-block;
     margin-bottom: 0.5rem;
 }
@@ -1378,7 +1383,8 @@ main {
     transition: transform 0.3s ease;
 }
 
-.reference-card:hover .quote-author {
+.reference-card:hover .quote-author,
+.reference-card:focus .quote-author {
     transform: translateX(-5px);
 }
 
@@ -1403,12 +1409,14 @@ main {
     transition: all 0.3s ease;
 }
 
-.reference-card:hover .phone-icon-small {
+.reference-card:hover .phone-icon-small,
+.reference-card:focus .phone-icon-small {
     transform: rotate(15deg);
     stroke: #FFD700;
 }
 
-.reference-card:hover .quote-contact {
+.reference-card:hover .quote-contact,
+.reference-card:focus .quote-contact {
     color: #333;
 }
 
@@ -1421,6 +1429,7 @@ main {
     letter-spacing: 1px;
     position: relative;
     display: inline-block;
+    transition: width 0.3s ease;
 }
 
 .reference-subheader::after {
@@ -1434,7 +1443,8 @@ main {
     transition: width 0.3s ease;
 }
 
-.reference-card:hover .reference-subheader::after {
+.reference-card:hover .reference-subheader::after,
+.reference-card:focus .reference-subheader::after {
     width: 100%;
 }
 
@@ -1507,7 +1517,8 @@ main {
     animation-delay: 0.2s;
 }
 
-.quote-card:hover {
+.quote-card:hover,
+.quote-card:focus {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
