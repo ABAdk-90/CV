@@ -592,6 +592,13 @@ footer {
     justify-content: center;
 }
 
+.competency-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #000;
+    fill: none;
+}
+
 .competency-card:hover,
 .competency-card:focus {
     transform: translateY(-4px);
@@ -1319,8 +1326,6 @@ main {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 0.5rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
 }
 
 .reference-content .short-description {
@@ -1363,7 +1368,7 @@ main {
     color: #000;
     text-decoration: none;
     border-bottom: 1px solid #000;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     display: inline-block;
     margin-bottom: 0.5rem;
 }
@@ -1429,7 +1434,6 @@ main {
     letter-spacing: 1px;
     position: relative;
     display: inline-block;
-    transition: width 0.3s ease;
 }
 
 .reference-subheader::after {
@@ -1782,4 +1786,186 @@ main {
     color: #FFD700;
     font-family: Georgia, serif;
     margin-left: 0.25rem;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    fill: none;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-item:hover .contact-icon {
+    background: #FFD700;
+    transform: scale(1.05);
+}
+
+.contact-item:hover .contact-icon svg {
+    stroke: #000;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+}
+
+/* Kompetencer sektion */
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.competency-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    height: auto;
+    min-height: 200px;
+}
+
+.competency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.03), transparent);
+    background-size: 200% 200%;
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.competency-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    color: #000;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+    background-color: #f3f4f6;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.competency-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #000;
+    fill: none;
+}
+
+.competency-card:hover,
+.competency-card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: #FFD700;
+    z-index: 1;
+}
+
+.competency-card:hover::before,
+.competency-card:focus::before {
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.08), transparent);
+}
+
+.competency-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.competency-card .short-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+    transition: opacity 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.competency-card .expanded-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.competency-card:hover .expanded-description,
+.competency-card:focus .expanded-description {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.competency-card:hover .short-description,
+.competency-card:focus .short-description {
+    opacity: 0.7;
+}
+
+.competency-card .expanded-description a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.competency-card .expanded-description a:hover {
+    color: #666;
+    border-bottom-color: #666;
 } 
